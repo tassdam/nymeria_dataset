@@ -1,0 +1,17 @@
+name: pymeria
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - pillow
+  - click
+  - requests
+  - pymomentum
+  - tqdm
+  - pip
+  - pip:
+    - loguru
+    - projectaria-tools==1.5.5
+    - -e .
