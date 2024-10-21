@@ -158,7 +158,7 @@ class DlLink:
                     zf.extractall(outdir)
             else:
                 dst_file = outdir / self.data_group.value
-                dst_file.parent.mkdir(exist_ok=True)
+                dst_file.parent.mkdir(exist_ok=True, parents=True)
                 shutil.move(src=tmp_filename, dst=dst_file)
 
         logger.info(f"Download {self.filename} -> {outdir}")
