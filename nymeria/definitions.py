@@ -144,7 +144,7 @@ def get_group_definitions() -> dict[str, list]:
     \brief Definition of DataGroups
            File paths are relative with respect to each sequence folder.
            Some sequences might missing certain files/data groups
-           due to errors occured from data collection or processing.
+           due to errors occurred from data collection or processing.
            There is one url per data group per sequence.
            Data groups with multiple files are packed into zip files.
     """
@@ -154,7 +154,7 @@ def get_group_definitions() -> dict[str, list]:
         + [f.default for f in fields(GazeFiles)]
     )
     miniAriaFiles = [f.default for f in fields(VrsFiles) if "et" not in f.name] + [
-        f.default for f in fields(SlamFiles) if "observerations" not in f.name
+        f.default for f in fields(SlamFiles) if "observations" not in f.name
     ]
 
     g_defs = {x.name: [x.value] for x in DataGroups}

@@ -114,7 +114,7 @@ class DlLink:
                     raise RuntimeError(
                         "Insufficient disk space. "
                         f"Require {self.file_size_bytes}B, "
-                        f"tmpdir availabel {free_tmpdir}B, outdir available {free_outdir}B"
+                        f"tmpdir available {free_tmpdir}B, outdir available {free_outdir}B"
                     )
 
                 with open(tmp_filename, "wb") as f:

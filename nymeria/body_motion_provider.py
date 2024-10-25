@@ -16,11 +16,11 @@ from pymomentum.geometry import Character, Mesh
 
 
 class BodyDataProvider:
-    _dt_norminal: float = 1.0e6 / 240.0
+    _dt_nominal: float = 1.0e6 / 240.0
     _dt_tolerance: int = 1000  # 1ms
     _tcorrect_tolerance: int = 10_1000  # 10ms
 
-    # coordinates tranform between momentum and xsens
+    # coordinates transform between momentum and xsens
     _A_Wx_Wm = torch.tensor([0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0]).reshape([3, 3])
 
     def __init__(self, npzfile: str, glbfile: str) -> None:
@@ -57,14 +57,14 @@ class BodyDataProvider:
     def __correct_timestamps(self) -> None:
         t_original = self.xsens_data[XSensConstants.k_timestamps_us]
         dt_original = t_original[1:] - t_original[:-1]
-        invalid = np.abs(dt_original - self._dt_norminal) > self._dt_tolerance
+        invalid = np.abs(dt_original - self._dt_nominal) > self._dt_tolerance
         num_invalid = invalid.sum()
         percentage = num_invalid / t_original.size * 100.0
         if num_invalid == 0:
             return
         logger.warning(f"number of invalid timestamps {num_invalid}, {percentage=}%")
         dt_corrected = dt_original
-        dt_corrected[invalid] = int(self._dt_norminal)
+        dt_corrected[invalid] = int(self._dt_nominal)
         dt_corrected = np.insert(dt_corrected, 0, 0)
         t_corrected = t_original[0] + np.cumsum(dt_corrected)
 
@@ -148,7 +148,7 @@ class BodyDataProvider:
         \brief Given a query timestamp, return the closest body motion.
         \arg t_us: query timestamp in microsecond.
         \arg T_W_Hx: optional SE3 alignment from XSens head to world coordinates,
-             computed from XSens to Aria world coordinaes alignment.
+             computed from XSens to Aria world coordinates alignment.
         \return First element is XSens posed skeleton. Second element is posed vertices
                 of momentum mesh if the momentum retargetted results are loaded.
                 We only return the posed mesh vertices, since the triangles and normals stay the same.
