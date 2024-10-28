@@ -123,7 +123,7 @@ class DataGroups(Enum):
     LICENSE = Subpaths.license
     metadata_json = Subpaths.metadata_json
 
-    body = Subpaths.body
+    body_motion = Subpaths.body
 
     recording_head = Subpaths.recording_head
     recording_head_data_data_vrs = f"{Subpaths.recording_head}/{VrsFiles.data}"
@@ -158,7 +158,7 @@ def get_group_definitions() -> dict[str, list]:
     ]
 
     g_defs = {x.name: [x.value] for x in DataGroups}
-    g_defs[DataGroups.body.name] = [x.default for x in fields(BodyFiles)]
+    g_defs[DataGroups.body_motion.name] = [x.default for x in fields(BodyFiles)]
 
     for x in [DataGroups.recording_head, DataGroups.recording_observer]:
         g_defs[x.name] = [f"{x.name}/{f}" for f in AriaFiles]

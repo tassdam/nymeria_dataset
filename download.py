@@ -22,7 +22,7 @@ def get_groups(full: bool = False) -> list[DataGroups]:
     return [
         DataGroups.LICENSE,
         DataGroups.metadata_json,
-        DataGroups.body,
+        DataGroups.body_motion,
         DataGroups.recording_head,
         DataGroups.recording_head_data_data_vrs,
         DataGroups.recording_lwrist,
