@@ -103,7 +103,6 @@ class DlLink:
 
             session.mount("https://", HTTPAdapter(max_retries=retries))
             with session.get(self.download_url, stream=True) as r:
-
                 free_outdir = shutil.disk_usage(outdir).free
                 free_tmpdir = shutil.disk_usage(tmpdir).free
                 if (
