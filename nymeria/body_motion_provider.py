@@ -18,7 +18,7 @@ from pymomentum.geometry import Character, Mesh
 class BodyDataProvider:
     _dt_nominal: float = 1.0e6 / 240.0
     _dt_tolerance: int = 1000  # 1ms
-    _tcorrect_tolerance: int = 10_1000  # 10ms
+    _tcorrect_tolerance: int = 10_000  # 10ms
 
     # coordinates transform between momentum and xsens
     _A_Wx_Wm = torch.tensor([0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0]).reshape([3, 3])
