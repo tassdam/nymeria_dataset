@@ -40,7 +40,7 @@ class HandEyeSolver:
         )
         logger.debug(f"{matrixU.shape=}, {S.shape=}, {matrixVh.shape=}")
 
-        RX = matrixVh @ matrixU.transpose()
+        RX = matrixVh.transpose() @ matrixU.transpose()
         if np.linalg.det(RX) < 0:
             RX[2, :] = RX[2, :] * -1.0
 
