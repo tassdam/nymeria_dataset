@@ -121,7 +121,7 @@ class NymeriaDataProvider(NymeriaDataProviderConfig):
         for rec in self.get_existing_recordings():
             t0, t1 = rec.get_global_timespan_ns()
             t_start = t_start if t_start > t0 else t0
-            t_end = t_end if t_end is None or t_end < t1 else t1
+            t_end = t_end if t_end is not None and t_end < t1 else t1
 
         t_start += ignore_ns
         t_end -= ignore_ns
