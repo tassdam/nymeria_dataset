@@ -27,12 +27,12 @@ def get_groups(full: bool = False) -> list[DataGroups]:
         DataGroups.recording_head_data_data_vrs,
         DataGroups.recording_lwrist,
         DataGroups.recording_rwrist,
-        DataGroups.recording_observer,
-        DataGroups.recording_observer_data_data_vrs,
-        DataGroups.narration_motion_narration_csv,
-        DataGroups.narration_atomic_action_csv,
-        DataGroups.narration_activity_summarization_csv,
-        DataGroups.semidense_observations,
+        # DataGroups.recording_observer,
+        # DataGroups.recording_observer_data_data_vrs,
+        # DataGroups.narration_motion_narration_csv,
+        # DataGroups.narration_atomic_action_csv,
+        # DataGroups.narration_activity_summarization_csv,
+        # DataGroups.semidense_observations,
     ]
 
 
