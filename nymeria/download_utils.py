@@ -23,10 +23,10 @@ from .definitions import DataGroups, NYMERIA_VERSION
 
 
 class DlConfig(Enum):
-    CHUCK_SIZE_BYTE = 8192
+    CHUCK_SIZE_BYTE = 1048576
     READ_BYTE = 4096
     RETRY = 5
-    BACKOFF_FACTOR = 3
+    BACKOFF_FACTOR = 10
 
 
 class DlStatus(Enum):
