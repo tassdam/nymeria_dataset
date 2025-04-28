@@ -1,0 +1,21 @@
+[workspace]
+authors = ["Damir Tassybayev <tassybayev.kostanay@gmail.com>"]
+channels = ["conda-forge"]
+name = "nymeria_dataset"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.10.*"
+numpy = ">=2.2.5,<3"
+pillow = ">=11.1.0,<12"
+click = ">=8.1.8,<9"
+requests = ">=2.32.3,<3"
+tqdm = ">=4.67.1,<5"
+momentum = ">=0.1.38,<0.2"
+
+[pypi-dependencies]
+loguru = ">=0.7.3, <0.8"
+projectaria-tools = "==1.5.5"
