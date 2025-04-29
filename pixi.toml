@@ -19,3 +19,4 @@ momentum = ">=0.1.38,<0.2"
 [pypi-dependencies]
 loguru = ">=0.7.3, <0.8"
 projectaria-tools = "==1.5.5"
+rerun-sdk = "==0.23.1"
