@@ -136,7 +136,7 @@ class NymeriaDataProvider(NymeriaDataProviderConfig):
     def get_synced_rgb_videos(self, t_ns_global: int) -> dict[str, any]:
         data = {}
         for rec in [self.recording_head, self.recording_observer]:
-            if rec is None and not rec.has_rgb:
+            if rec is None or not rec.has_rgb:
                 continue
 
             result = rec.get_rgb_image(t_ns_global, time_domain=TimeDomain.TIME_CODE)
