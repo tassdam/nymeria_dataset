@@ -1,6 +1,6 @@
 [workspace]
 authors = ["Damir Tassybayev <tassybayev.kostanay@gmail.com>"]
-channels = ["conda-forge", "nvidia", "pytorch"]
+channels = ["conda-forge", "nvidia", "pytorch", "https://prefix.dev/conda-forge"]
 name = "nymeria_dataset"
 platforms = ["win-64"]
 version = "0.1.0"
@@ -20,9 +20,8 @@ ipykernel = ">=6.29.5,<7"
 pandas = ">=2.2.3,<3"
 matplotlib = ">=3.10.1,<4"
 opencv = ">=4.11.0,<5"
-pytorch = "2.6.0.*"
-pytorch-cuda = "12.4.*"
-torchvision = "0.21.0.*"
+torchvision = ">=0.21.0,<0.22"
+pytorch = ">=2.6.0,<3"
 
 [pypi-dependencies]
 loguru = ">=0.7.3, <0.8"
