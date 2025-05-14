@@ -22,6 +22,8 @@ matplotlib = ">=3.10.1,<4"
 opencv = ">=4.11.0,<5"
 torchvision = ">=0.21.0,<0.22"
 pytorch = ">=2.6.0,<3"
+pygltflib = ">=1.16.4,<2"
+trimesh = ">=4.6.8,<5"
 
 [pypi-dependencies]
 loguru = ">=0.7.3, <0.8"
