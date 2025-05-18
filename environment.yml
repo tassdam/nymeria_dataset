@@ -8,7 +8,9 @@ dependencies:
   - pillow
   - click
   - requests
-  - pymomentum>=0.1.33
+  - momentum
+  - pytorch
+  - torchvision
   - tqdm
   - pip
   - pip:
