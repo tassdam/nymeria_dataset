@@ -14,8 +14,10 @@ dependencies:
   - tqdm
   - matplotlib
   - optuna
+  - plotly
   - pip
   - pip:
     - loguru
     - projectaria-tools==1.5.5
+    - kaleido 
     - -e .
