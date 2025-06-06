@@ -9,10 +9,10 @@ from pathlib import Path
 
 import numpy as np
 from loguru import logger
-from nymeria.body_motion_provider import create_body_data_provider
-from nymeria.handeye import HandEyeSolver
-from nymeria.path_provider import SequencePathProvider
-from nymeria.recording_data_provider import (
+from body_motion_provider import create_body_data_provider
+from handeye import HandEyeSolver
+from path_provider import SequencePathProvider
+from recording_data_provider import (
     create_recording_data_provider,
     RecordingDataProvider,
 )
@@ -25,8 +25,8 @@ from projectaria_tools.core.sophus import SE3
 class NymeriaDataProviderConfig:
     sequence_rootdir: Path
     load_head: bool = True
-    load_observer: bool = True
-    load_wrist: bool = True
+    load_observer: bool = False
+    load_wrist: bool = False
     load_body: bool = True
 
     # If true, the filtered semidense points are exported into a npz file at the first loading
