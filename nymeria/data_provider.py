@@ -9,10 +9,10 @@ from pathlib import Path
 
 import numpy as np
 from loguru import logger
-from body_motion_provider import create_body_data_provider
-from handeye import HandEyeSolver
-from path_provider import SequencePathProvider
-from recording_data_provider import (
+from nymeria.body_motion_provider import create_body_data_provider
+from nymeria.handeye import HandEyeSolver
+from nymeria.path_provider import SequencePathProvider
+from nymeria.recording_data_provider import (
     create_recording_data_provider,
     RecordingDataProvider,
 )
