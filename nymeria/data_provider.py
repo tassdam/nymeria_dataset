@@ -136,7 +136,7 @@ class NymeriaDataProvider(NymeriaDataProviderConfig):
     def get_synced_rgb_videos(self, t_ns_global: int) -> dict[str, any]:
         data = {}
         for rec in [self.recording_head, self.recording_observer]:
-            if rec is None and not rec.has_rgb:
+            if rec is None and not rec.has_rgb: # на самом деле это баг, так как на деле даже если у меня нет recording_observer, я все равно должен иметь возможность использовать данный метод (вместо "and" -> "or")
                 continue
 
             result = rec.get_rgb_image(t_ns_global, time_domain=TimeDomain.TIME_CODE)
